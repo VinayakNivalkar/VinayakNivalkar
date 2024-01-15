@@ -92,7 +92,7 @@ const web3forms_access_key = process.env.WEB3FORMS_ACCESS_KEY;
 async function onSubmit(values: any) {
   ShouldShowSpinner.value = true;
   
-  const response = await submitweb3(values);
+  /* const response = await submitweb3(values);
 
   ShouldShowSpinner.value = false;
 
@@ -100,7 +100,11 @@ async function onSubmit(values: any) {
     showModal();
   } else {
     showErrModal();
-  }
+  } */
+
+  //unable to add secret so for now showing err modal
+  ShouldShowSpinner.value = false;
+  showErrModal();
 }
 
 function hideModal() {
