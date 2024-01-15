@@ -1,5 +1,5 @@
 {
-  "name": "nuxt-app",
+  "name": "my-site",
   "private": true,
   "type": "module",
   "scripts": {
@@ -13,5 +13,17 @@
     "nuxt": "^3.9.1",
     "vue": "^3.4.10",
     "vue-router": "^4.2.5"
-  }
+  },
+  "description": "My Personal Site",
+  "version": "0.0.1",
+  "author": "Vinayak Nivalkar (hello@vnyk.me)",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VinayakNivalkar/VinayakNivalkar.git"
+  },
+  "bugs": {
+    "url": "https://github.com/VinayakNivalkar/VinayakNivalkar/issues"
+  },
+  "homepage": "https://github.com/VinayakNivalkar/VinayakNivalkar#readme"
 }
