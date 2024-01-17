@@ -1,6 +1,6 @@
 <template>
   <div class="mt-20">
-    <img class="object-fill h-96 w-96" v-bind:src="SelectedPxlArt">
+    <NuxtImg class="object-fill h-96 w-96" v-bind:src="SelectedPxlArt"/>
   </div>
   <div class="mb-5 px-2 py-1 bg-red-50 hover:bg-red-100 cursor-pointer" @click="switchPxlArt">
     <h1 class="font-serif font-extrabold text-3xl text-gray-800">Vinayak Nivalkar</h1>
@@ -47,12 +47,9 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 
-import PxlAvatarVar1 from 'assets/svg/PxlAvatarVar1.svg';
-import PxlAvatarVar2 from 'assets/svg/PxlAvatarVar2.svg';
-
 const PxlArtArr = [
-  PxlAvatarVar1,
-  PxlAvatarVar2,
+  '/svg/PxlAvatarVar1.svg',
+  '/svg/PxlAvatarVar2.svg',
 ]
 let SelectedPxlArt = ref(PxlArtArr[0]);
 

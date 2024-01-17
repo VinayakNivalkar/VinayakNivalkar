@@ -10,6 +10,7 @@ export default defineNuxtConfig({
   modules: [
     "@nuxtjs/tailwindcss",
     "nuxt-icon",
-    "@vee-validate/nuxt"
+    "@vee-validate/nuxt",
+    "@nuxt/image"
   ]
 })
