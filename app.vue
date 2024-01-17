@@ -1,6 +1,6 @@
 <template>
   <div class="relative isolate overflow-x-hidden w-screen h-screen flex md:flex-row flex-col">
-    <div class="transition-all ease-in-out delay-100 duration-300 absolute flex bg-[url('/jpg/me_at_beach.jpg')] md:bg-none bg-center w-full h-full md:blur-none blur-sm bg-cover md:opacity-100 opacity-10 md:w-1/2">
+    <div class="transition-all ease-in-out delay-100 duration-300 absolute flex bg-[url('/jpg/me_at_beach_mini.jpeg')] md:bg-none bg-center w-full h-full md:blur-none blur-sm bg-cover md:opacity-100 opacity-10 md:w-1/2">
       <NuxtImg alt="" height="1440px" quality="70" src="/jpg/me_at_beach.jpg" format="webp" class="flex md:self-auto self-center object-cover w-full invisible md:visible"/>
     </div>
     <div class="transition-all ease-in-out delay-100 duration-300 absolute bg-transparent flex flex-col items-center justify-center w-screen h-screen overflow-y-scroll md:right-0 pt-60 md:w-1/2">

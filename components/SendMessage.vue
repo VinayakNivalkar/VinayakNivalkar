@@ -47,7 +47,7 @@
         </div>
       </ErrorMessage>
     </div>
-    <button class="transition-all ease-in-out duration-250 delay-100 flex flex-row justify-center items-center bg-black hover:bg-gray-900 text-white hover:saturate-150 hover:scale-[110%] px-2.5 py-2.5 rounded-lg m-2 col-span-1 shadow-sm">
+    <button aria-label="submit" class="transition-all ease-in-out duration-250 delay-100 flex flex-row justify-center items-center bg-black hover:bg-gray-900 text-white hover:saturate-150 hover:scale-[110%] px-2.5 py-2.5 rounded-lg m-2 col-span-1 shadow-sm">
       <Icon v-if="ShouldShowSpinner" name="svg-spinners:90-ring-with-bg" class="flex-none size-5" />
       <Icon v-else name="iconoir:send-diagonal-solid" class="flex-none size-5" />
     </button>
