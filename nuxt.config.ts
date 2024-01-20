@@ -8,6 +8,7 @@ export default defineNuxtConfig({
     "@nuxtjs/tailwindcss",
     "nuxt-icon",
     "@vee-validate/nuxt",
-    "@nuxt/image"
+    "@nuxt/image",
+    "@nuxt/content"
   ]
 })
