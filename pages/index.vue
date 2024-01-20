@@ -1,6 +1,9 @@
 <template>
   <div class="mt-20">
     <NuxtImg class="object-fill h-96 w-96" v-bind:src="SelectedPxlArt" alt=""/>
+    <div class="invisible" v-for="item in PxlArtArr">
+      <NuxtImg class="w-0 h-0" :src="item" alt=""/>
+    </div>
   </div>
   <div class="mb-5 px-2 py-1 bg-red-50 hover:bg-red-100 cursor-pointer" @click="switchPxlArt">
     <h1 class="font-serif font-extrabold text-3xl text-gray-800">Vinayak Nivalkar</h1>
