@@ -39,11 +39,11 @@ useSeoMeta({
   description: 'Personal Blog',
   ogTitle: 'Vinayak Nivalkar',
   ogDescription: 'Personal Blog',
-  ogImage: '/svg/PxlAvatarVar1.svg',
+  ogImage: 'https://vnyk.me/svg/PxlAvatarVar1.svg',
   ogUrl: 'https://vnyk.me',
   twitterTitle: 'Vinayak Nivalkar',
   twitterDescription: 'Personal Blog',
-  twitterImage: '/svg/PxlAvatarVar1.svg',
+  twitterImage: 'https://vnyk.me/svg/PxlAvatarVar1.svg',
   twitterCard: 'summary'
 })
 
