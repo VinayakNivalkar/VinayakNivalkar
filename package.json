@@ -33,6 +33,7 @@
   },
   "homepage": "https://github.com/VinayakNivalkar/VinayakNivalkar#readme",
   "dependencies": {
-    "@vee-validate/yup": "^4.12.4"
+    "@vee-validate/yup": "^4.12.4",
+    "date-fns": "^3.3.1"
   }
 }
