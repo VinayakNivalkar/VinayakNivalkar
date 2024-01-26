@@ -2,7 +2,7 @@
 title: 'The start of vnyk.me'
 description: 'A small article on why I started this blog'
 image: '/svg/PxlAvatarVar1.svg'
-publishedOn: '2024-01-24'
+publishedOn: '2024-01-26'
 ---
 
 ::BlogContentTitle
