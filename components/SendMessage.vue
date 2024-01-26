@@ -4,7 +4,7 @@
     :validation-schema="schema"
     class="col-span-full grid grid-cols-4"
   >
-    <div class="flex rounded-lg shadow-sm m-2 col-span-4 ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus:ring-inset focus-within:ring-gray-600 focus-within:outline-dashed focus-within:outline-offset-4 outline-gray-900">
+    <div class="flex rounded-lg shadow-sm m-2 col-span-4 ring-1 ring-inset md:ring-gray-300 ring-gray-400 focus-within:ring-2 focus:ring-inset focus-within:ring-gray-600 focus-within:outline-dashed focus-within:outline-offset-4 outline-gray-900">
       <Field
         type="email"
         name="email"
@@ -18,7 +18,7 @@
         </div>
       </ErrorMessage>
     </div>
-    <div class="flex rounded-lg shadow-sm m-2 col-span-4 ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus:ring-inset focus-within:ring-gray-600 focus-within:outline-dashed focus-within:outline-offset-4 outline-gray-900">
+    <div class="flex rounded-lg shadow-sm m-2 col-span-4 ring-1 ring-inset md:ring-gray-300 ring-gray-400 focus-within:ring-2 focus:ring-inset focus-within:ring-gray-600 focus-within:outline-dashed focus-within:outline-offset-4 outline-gray-900">
       <Field
         type="text"
         as="textarea"
@@ -33,7 +33,7 @@
         </div>
       </ErrorMessage>
     </div>
-    <div class="flex rounded-lg shadow-sm m-2 col-span-3 ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus:ring-inset focus-within:ring-gray-600 focus-within:outline-dashed focus-within:outline-offset-4 outline-gray-900">
+    <div class="flex rounded-lg shadow-sm m-2 col-span-3 ring-1 ring-inset md:ring-gray-300 ring-gray-400 focus-within:ring-2 focus:ring-inset focus-within:ring-gray-600 focus-within:outline-dashed focus-within:outline-offset-4 outline-gray-900">
       <Field
         type="name"
         name="name"
@@ -87,24 +87,18 @@ const schema = yup.object({
   email: yup.string().required().email(),
 })
 
-const web3forms_access_key = process.env.WEB3FORMS_ACCESS_KEY;
-
 async function onSubmit(values: any) {
   ShouldShowSpinner.value = true;
   
-  /* const response = await submitweb3(values);
+  const response = await submitApi(values);
 
   ShouldShowSpinner.value = false;
 
-  if (response.success) {
+  if (response.status.value === 'success') {
     showModal();
   } else {
     showErrModal();
-  } */
-
-  //unable to add secret so for now showing err modal
-  ShouldShowSpinner.value = false;
-  showErrModal();
+  }
 }
 
 function hideModal() {
@@ -135,21 +129,20 @@ function showErrModal() {
   }, 100);
 }
 
-async function submitweb3(values: any) {
-  const response = await $fetch('https://api.web3forms.com/submit', {
+async function submitApi(values: any) {
+  const response = await useFetch('https://api.vnyk.me/v1/messages', {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
       Accept: "application/json",
     },
     body: JSON.stringify({
-      access_key: web3forms_access_key,
       name: values.name,
       email: values.email,
       message: values.message,
     }),
   })
 
-  return response as any;
+  return response;
 }
 </script>
