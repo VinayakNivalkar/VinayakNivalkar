@@ -6,9 +6,10 @@
     <div class="transition-all ease-in-out delay-100 duration-300 absolute bg-transparent flex flex-col items-center justify-center w-screen h-screen overflow-y-scroll md:right-0" :class="SelectedPage === '/' ? 'md:w-1/2' : 'md:w-3/4'">
       <div class="md:p-0 p-10"></div>
       <NuxtPage />
+      <div class="mb-10"></div>
     </div>
     <div class="transition-all ease-in-out delay-100 duration-300 absolute md:top-1/2 transform md:-translate-y-1/2 md:h-auto w-full" :class="SelectedPage === '/' ? 'md:w-1/2' : 'md:w-1/4'">
-      <div class="w-full md:w-max shadow-2xl md:ml-auto md:translate-x-1/2 backdrop-blur-lg bg-white/40 p-2 rounded-none md:rounded-lg grid md:grid-flow-row md:grid-rows-2 grid-flow-col">
+      <div class="w-full md:w-max md:shadow-2xl shadow-lg md:ml-auto md:translate-x-1/2 backdrop-blur-lg bg-white/40 p-2 rounded-none md:rounded-lg grid md:grid-flow-row md:grid-rows-2 grid-flow-col">
         <NuxtLink to="/" active-class="bg-black text-white" class="transition-all ease-in-out duration-200 row-span-1 md:py-5 py-1 px-1 m-1 rounded-lg hover:bg-black/20 flex justify-center cursor-pointer">
           <p class="md:rotate-90 font-mono md:text-sm my-2">About</p>
         </NuxtLink>
@@ -17,7 +18,7 @@
         </NuxtLink>
       </div>
     </div>
-    <div class="md:visible invisible absolute bottom-0 left-0 right-0 bg-black p-3 text-white">
+    <div class="visible absolute bottom-0 left-0 right-0 bg-black p-3 text-white">
       <div class="grid col-span-3 justify-center">
         <p class="font-mono text-xs"><Icon name="uil:copyright"></Icon> Vinayak Nivalkar | All rights Reserved</p>
       </div>

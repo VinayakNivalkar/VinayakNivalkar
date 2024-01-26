@@ -41,11 +41,6 @@
         <SendMessage/>
       </div>
     </div>
-    <div class="md:invisible visible bg-black p-3 w-full text-white">
-      <div class="grid col-span-3 justify-center">
-        <p class="font-mono text-xs"><Icon name="uil:copyright"></Icon> Vinayak Nivalkar | All rights Reserved</p>
-      </div>
-    </div>
   </div>
 </template>
 
