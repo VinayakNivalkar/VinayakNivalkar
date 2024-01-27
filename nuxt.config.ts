@@ -8,6 +8,7 @@ export default defineNuxtConfig({
     name: 'Vinayak Nivalkar',
     description: 'Personal Blog',
     defaultLocale: 'en',
+    trailingSlash: true
   },
   sitemap: {
     strictNuxtContentPaths: true
