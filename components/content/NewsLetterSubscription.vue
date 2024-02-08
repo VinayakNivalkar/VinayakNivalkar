@@ -3,10 +3,10 @@
     @submit="onSubmit"
     :validation-schema="schema"
   >
-    <div class="flex flex-col justify-center items-center lg:p-20 p-10 border border-slate-200 rounded-3xl bg-white shadow-lg lg:m-20 m-5">
+    <div class="flex flex-col justify-center items-center lg:px-10 px-5 py-20 border border-slate-200 rounded-3xl bg-white shadow-lg lg:m-20 m-0">
       <Icon name="quill:inbox-newsletter" class="size-24 mt-10" />
       <h1 class="md:text-4xl text-2xl font-serif font-bold bg-gradient-to-r from-indigo-500 to-pink-500 text-transparent bg-clip-text py-2 m-10 saturate-150 text-center">Subscribe for Blogs and Projects</h1>
-      <div class="flex lg:flex-row flex-col w-full">
+      <div class="flex xl:flex-row flex-col w-full xl:w-2/3">
         <div class="transition-all duration-200 delay-100 ease-in-out flex grow items-center rounded-lg shadow-sm m-2 ring-1 ring-inset md:ring-gray-300 ring-gray-400 focus-within:ring-2 focus:ring-inset focus-within:ring-gray-600 outline-gray-900">
           <Field
             type="email"
