@@ -29,6 +29,17 @@ I’m a full-stack developer with a little curiosity in Artificial Intelligence 
 
 An E-commerce App that lets users shop for Products and Provides Inventory Management for sellers, with an Emphasis on Design and Testing  
   
+ 
+
+### **[Kcalc App (MCA Sem I Project)](https://github.com/VinayakNivalkar/Kcalc)**  
+  
+
+A Calorie Tracking App that lets users track
+their diet and receive calorie Recommendation,
+accordingly it uses algotithms like [Mifflin St Jeor](https://reference.medscape.com/calculator/846/mifflin-st-jeor-equation) to calculate Basal Metabollic Rate and other
+algorithms to calculate fat, protein and carbs
+consumption.
+  
 
 ##   
   
