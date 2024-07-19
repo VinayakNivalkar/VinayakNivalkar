@@ -28,7 +28,12 @@ I’m a full-stack developer with a little curiosity in Artificial Intelligence 
   
 
 An E-commerce App that lets users shop for Products and Provides Inventory Management for sellers, with an Emphasis on Design and Testing  
+
+
+### **[RestoX App (Bsc CS Sem VI Project)](https://github.com/restox-app)**  
   
+
+An Ecommerce App that lets users order food while in restaurants, Emphasis on Multi Device Compatibility and Responsive Design
  
 
 ### **[Kcalc App (MCA Sem I Project)](https://github.com/VinayakNivalkar/Kcalc)**  
