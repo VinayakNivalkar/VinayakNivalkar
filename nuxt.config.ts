@@ -10,13 +10,10 @@ export default defineNuxtConfig({
     defaultLocale: 'en',
     trailingSlash: true
   },
-  sitemap: {
-    strictNuxtContentPaths: true
-  },
   devtools: { enabled: true },
   modules: [
     "@nuxtjs/tailwindcss",
-    "nuxt-icon",
+    "@nuxt/icon",
     "@vee-validate/nuxt",
     "@nuxt/image",
     "@nuxt/content",
