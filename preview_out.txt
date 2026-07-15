@@ -1,0 +1,29 @@
+
+> my-site@0.0.1 preview
+> nuxt preview
+
+[nuxt:tailwindcss] ℹ Using default Tailwind CSS file
+ℹ Using yup with vee-validate
+
+ WARN  Module nuxtseo is disabled due to incompatibility issues:
+ - [nuxt] Nuxt version ^3.7.0 is required but currently using 4.4.8
+
+ℹ Nuxt Icon server bundle mode is set to local
+│
+│
+│ ╭── Previewing Nuxt app ─────────────────────────────────────────────────╮
+│ │                                                                        │
+│ │  You are previewing a Nuxt app. In production, do not use this CLI.    │
+│ │  Instead, run npx serve public directly.                               │
+│ │                                                                        │
+│ │  Node.js:           v22.22.1                                           │
+│ │  Nitro preset:      static                                             │
+│ │  Working directory: .output                                            │
+│ │                                                                        │
+│ ╰────────────────────────────────────────────────────────────────────────╯
+│
+└  Running npx serve public in .output
+
+ INFO  Accepting connections at http://localhost:34179
+ HTTP  7/14/2026 3:19:22 PM ::1 GET /blog
+ HTTP  7/14/2026 3:19:22 PM ::1 Returned 200 in 21 ms

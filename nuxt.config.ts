@@ -18,5 +18,8 @@ export default defineNuxtConfig({
     "@nuxt/image",
     "@nuxt/content",
     "@nuxtjs/seo"
-  ]
+  ],
+  content: {
+    // Add your content configuration here
+  }
 })

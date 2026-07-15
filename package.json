@@ -10,7 +10,7 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
-    "@nuxt/content": "^2.13.4",
+    "@nuxt/content": "^3.15.0",
     "@nuxt/image": "^2.0.0",
     "@nuxtjs/tailwindcss": "^6.14.0",
     "@vee-validate/nuxt": "^4.15.1",
@@ -33,13 +33,19 @@
   "homepage": "https://github.com/VinayakNivalkar/VinayakNivalkar#readme",
   "dependencies": {
     "@nuxt/icon": "^2.3.1",
-    "@nuxtjs/seo": "^2.0.0-rc.5",
+    "@nuxtjs/seo": "^5.3.2",
     "@takumi-rs/core": "^2.0.0-rc.16",
+    "@unhead/ssr": "^3.1.8",
+    "@unhead/vue": "^2.1.15",
     "@vee-validate/yup": "^4.15.1",
     "better-sqlite3": "^12.11.1",
     "date-fns": "^4.4.0",
     "nuxt-og-image": "^6.7.2",
+    "nuxt-seo-utils": "^8.3.1",
+    "nuxt-site-config": "^4.1.1",
     "tailwindcss": "^3.4.19",
-    "unhead": "^3.1.8"
+    "unenv": "^1.10.0",
+    "unhead": "^3.1.8",
+    "vite": "^8.1.4"
   }
 }
