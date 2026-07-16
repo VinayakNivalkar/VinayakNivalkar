@@ -6,7 +6,7 @@
           <Icon class="md:invisible visible size-8" name="ic:round-arrow-back-ios" />
         </button>
         <BreadCrumb class="md:visible invisible md:size-auto size-0">{{ doc.title }}</BreadCrumb>
-        <p v-if="doc.publishedOn" class="grow font-mono text-sm line-clamp-1 font-extralight text-gray-500 text-right">Published <span class="text-black">{{ format(new Date(doc.publishedOn), 'MMM do, yyyy') }}</span></p>
+        <p v-if="doc.meta?.publishedOn" class="grow font-mono text-sm line-clamp-1 font-extralight text-gray-500 text-right">Published <span class="text-black">{{ format(new Date(doc.meta.publishedOn), 'MMM do, yyyy') }}</span></p>
       </div>
       <BlogTitle>{{ doc.title }}</BlogTitle>
       <BlogDescription>{{ doc.description }}</BlogDescription>
