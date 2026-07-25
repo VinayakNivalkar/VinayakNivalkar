@@ -19,7 +19,7 @@ test('renders the blog listing and a blog post', async ({ page }) => {
 })
 
 test('renders a missing blog fallback', async ({ page }) => {
-  await page.goto('/blog/does-not-exist')
+  await page.goto('/blog/does-not-exist', { waitUntil: 'domcontentloaded' })
 
   await expect(page.getByText("This Blog doesn't Exist")).toBeVisible()
   await expect(page.getByRole('button', { name: 'Go To Blogs' })).toBeVisible()
@@ -27,17 +27,28 @@ test('renders a missing blog fallback', async ({ page }) => {
 
 test('shows success and failure states for contact submissions', async ({ page }) => {
   await page.goto('/')
-  await page.route('https://api.vnyk.me/v1/messages', route => route.fulfill({ status: 200, body: '{}' }))
+  const form = page.locator('form')
+  await page.route('**/v1/messages', route => route.fulfill({
+    status: 200,
+    contentType: 'application/json',
+    body: '{}'
+  }))
 
-  await page.getByPlaceholder('Email').first().fill('hello@example.com')
-  await page.getByPlaceholder('Message').fill('Hello')
-  await page.getByPlaceholder('Name').fill('Vinayak')
-  await page.getByRole('button', { name: 'submit' }).click()
+  await form.getByPlaceholder('Email').fill('hello@example.com')
+  await form.getByPlaceholder('Message').fill('Hello')
+  await form.getByPlaceholder('Name').fill('Vinayak')
+  await Promise.all([
+    page.waitForRequest('**/v1/messages'),
+    form.getByRole('button', { name: 'submit' }).click()
+  ])
   await expect(page.getByText('Message Sent')).toBeVisible()
 
   await page.locator('body').click({ position: { x: 5, y: 5 } })
   await page.unroute('https://api.vnyk.me/v1/messages')
-  await page.route('https://api.vnyk.me/v1/messages', route => route.fulfill({ status: 500, body: '{}' }))
-  await page.getByRole('button', { name: 'submit' }).click()
+  await page.route('**/v1/messages', route => route.fulfill({ status: 500, body: '{}' }))
+  await Promise.all([
+    page.waitForRequest('**/v1/messages'),
+    form.getByRole('button', { name: 'submit' }).click()
+  ])
   await expect(page.getByText('Unable to Send Message')).toBeVisible()
 })
