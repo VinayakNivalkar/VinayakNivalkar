@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+/* Tailwind's preflight makes SVGs block-level; Iconify icons must remain inline in text. */
+svg.iconify {
+  display: inline-block;
+}

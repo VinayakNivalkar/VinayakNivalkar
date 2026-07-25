@@ -47,7 +47,7 @@
         </div>
       </ErrorMessage>
     </div>
-    <button aria-label="submit" class="transition-all ease-in-out duration-250 delay-100 flex flex-row justify-center items-center bg-black hover:bg-gray-900 text-white hover:saturate-150 hover:scale-[110%] px-2.5 py-2.5 rounded-lg m-2 col-span-1 shadow-sm">
+    <button aria-label="submit" :disabled="ShouldShowSpinner" class="transition-all ease-in-out duration-[250ms] delay-100 flex flex-row justify-center items-center bg-black hover:bg-gray-900 disabled:cursor-not-allowed disabled:opacity-70 text-white hover:saturate-150 hover:scale-[110%] px-2.5 py-2.5 rounded-lg m-2 col-span-1 shadow-sm">
       <Icon v-if="ShouldShowSpinner" name="svg-spinners:90-ring-with-bg" class="flex-none size-5" />
       <Icon v-else name="iconoir:send-diagonal-solid" class="flex-none size-5" />
     </button>
@@ -71,15 +71,21 @@
 </template>
 
 <script lang="ts" setup>
-import { ref } from 'vue';
-import * as yup from 'yup';
+import { ErrorMessage, Field, Form } from 'vee-validate'
+import * as yup from 'yup'
 
-let ShouldShowModal = ref(false);
-let ShouldHideModal = ref(true);
-let ShouldShowSpinner = ref(false);
+interface MessageValues {
+  email: string
+  message: string
+  name: string
+}
 
-let ShouldShowErrModal = ref(false);
-let ShouldHideErrModal = ref(true);
+const ShouldShowModal = ref(false)
+const ShouldHideModal = ref(true)
+const ShouldShowSpinner = ref(false)
+
+const ShouldShowErrModal = ref(false)
+const ShouldHideErrModal = ref(true)
 
 const schema = yup.object({
   name: yup.string().required().max(16),
@@ -87,17 +93,16 @@ const schema = yup.object({
   email: yup.string().required().email(),
 })
 
-async function onSubmit(values: any) {
-  ShouldShowSpinner.value = true;
-  
-  const response = await submitApi(values);
+async function onSubmit(values: Record<string, unknown>) {
+  ShouldShowSpinner.value = true
 
-  ShouldShowSpinner.value = false;
-
-  if (response.status.value === 'success') {
+  try {
+    await submitApi(values as unknown as MessageValues)
     showModal();
-  } else {
+  } catch {
     showErrModal();
+  } finally {
+    ShouldShowSpinner.value = false
   }
 }
 
@@ -129,9 +134,9 @@ function showErrModal() {
   }, 100);
 }
 
-async function submitApi(values: any) {
-  const response = await useFetch('https://api.vnyk.me/v1/messages', {
-    method: "POST",
+async function submitApi(values: MessageValues) {
+  await $fetch('https://api.vnyk.me/v1/messages', {
+    method: 'POST',
     headers: {
       "Content-Type": "application/json",
       Accept: "application/json",
@@ -142,7 +147,5 @@ async function submitApi(values: any) {
       message: values.message,
     }),
   })
-
-  return response;
 }
 </script>
