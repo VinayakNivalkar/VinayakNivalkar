@@ -15,7 +15,9 @@ jobs:
         with:
           node-version: "22.18.0"
           cache: npm
-      - run: npm ci
+      # Nuxt's OXC parser uses platform-specific optional native bindings.
+      # npm ci can omit the runner's binding from a lockfile generated on macOS.
+      - run: npm install --include=optional --no-audit --no-fund
       - run: npm run typecheck
       - run: npx playwright install --with-deps chromium
       - run: npm test
